@@ -47,4 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error playing audio:", error);
         });
     });
+
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest(".audio-control")) {
+            window.location.href = "/PORTFOLIO/Project1/CharPage/2CharPage.html"
+        }
+    })
 });
