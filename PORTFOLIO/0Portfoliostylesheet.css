@@ -1,20 +1,24 @@
 .creator {
     color: rgb(0, 0, 0);
-    background-color: rgb(95, 255, 244);
-    width: fit-content;
+    text-align: center;
+    background-color: rgb(207, 207, 207);
+    background-size:contain;
+    border-radius: 50px;
     }
     .dropbtn {
-        background-color: rgb(95, 255, 244);
+        background-color: rgb(207, 207, 207);
         color: rgb(0, 0, 0);
         padding: 16px;
         font-size: 16px;
         border: none;
+        border-radius: 50px;
+        width:
       }
       
       /* The container <div> - needed to position the dropdown content */
       .dropdown {
-        position: relative;
-        display: inline-block;
+        position:fixed;
+        display: block;
       }
       
       /* Dropdown Content (Hidden by Default) */
@@ -42,4 +46,4 @@
       .dropdown:hover .dropdown-content {display: block;}
       
       /* Change the background color of the dropdown button when the dropdown content is shown */
-      .dropdown:hover .dropbtn {background-color: rgb(56, 145, 139);}
+      .dropdown:hover .dropbtn {background-color: rgb(156, 156, 156);}
