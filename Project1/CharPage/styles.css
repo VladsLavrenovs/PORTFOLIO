@@ -5,32 +5,41 @@
     box-sizing: border-box;
 }
 
-body {
+.navigation-container {
+    
     justify-content: center;
-    height: 100vh;
     display: flex;
-    background: #000;
+    background: rgb(0, 0, 0);
     align-items: end;
-    padding-bottom: 2rem;
+    padding-bottom: 2rem; 
+    height: 140px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    z-index: 2;
 }
-
 .navigation {
+    top: 5px;
     position: relative;
     width: 400px;
     height: 70px;
-    background: #fff;
+    background: #858585;
     display: flex;
     align-items:center;
     border-radius: 10px;
     justify-content: center;
 }
 
-.navigation ul {
+.navigation-container ul {
     display: flex;
     width: 350px;
 }
 
-.navigation ul li {
+.navigation-container ul li {
     position: relative;
     list-style: none;
     width: 70px;
@@ -38,7 +47,7 @@ body {
     z-index: 1;
 }
 
-.navigation ul li a {
+.navigation-container ul li a {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -49,7 +58,7 @@ body {
     font-weight: 500;
 }
 
-.navigation ul li a .icon {
+.navigation-container ul li a .icon {
     position: relative;
     display: block;
     line-height: 70px;
@@ -66,11 +75,11 @@ body {
     border-radius: 50%;
 }
 
-.navigation ul li.active a .icon {
+.navigation-container ul li.active a .icon {
     transform: translateY(-35px);
 }
 
-.navigation ul li a .text {
+.navigation-container ul li a .text {
     position: absolute;
     color: #000;
     font-weight: 400;
@@ -81,7 +90,7 @@ body {
     opacity: 0;
 }
 
-.navigation ul li.active a .text {
+.navigation-container ul li.active a .text {
     opacity: 1;
     transform: translateY(10px);
 }
@@ -95,6 +104,7 @@ body {
     border-radius: 50%;
     border: 6px solid #000;
     transition: 0.5s;
+   
 }
 
 .indicator::before {
@@ -121,22 +131,74 @@ body {
     box-shadow: -1px -10px 0 0 #000;
 }
 
-.navigation ul li:nth-child(1).active~.indicator {
+.navigation-container ul li:nth-child(1).active~.indicator {
     transform: translateX(calc(70px*0));
 }
 
-.navigation ul li:nth-child(2).active~.indicator {
+.navigation-container ul li:nth-child(2).active~.indicator {
     transform: translateX(calc(70px*1));
 }
 
-.navigation ul li:nth-child(3).active~.indicator {
+.navigation-container ul li:nth-child(3).active~.indicator {
     transform: translateX(calc(70px*2));
 }
 
-.navigation ul li:nth-child(4).active~.indicator {
+.navigation-container ul li:nth-child(4).active~.indicator {
     transform: translateX(calc(70px*3));
 }
 
-.navigation ul li:nth-child(5).active~.indicator {
+.navigation-container ul li:nth-child(5).active~.indicator {
     transform: translateX(calc(70px*4));
+}
+
+/* MENU CSS ABOVE, OTHER WILL BE BELOW */
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.text-content {
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+    animation: appearAnimation 2s forwards;
+}
+
+.text-content img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+
+.content-area {
+    background-size:cover;
+    flex: 1;
+    position: relative;
+    
+}
+
+
+@keyframes appearAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
 }

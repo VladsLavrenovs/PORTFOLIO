@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("click", function(event) {
         if (!event.target.closest(".audio-control")) {
-            window.location.href = "/PORTFOLIO/Project1/CharPage/2CharPage.html"
+            window.location.href = "/PORTFOLIO/Project1/CharPage/index.html"
         }
     })
 });
