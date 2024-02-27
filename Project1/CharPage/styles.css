@@ -4,205 +4,47 @@
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
-
-.navigation-container {
-    
-    justify-content: center;
-    display: flex;
-    background: rgb(0, 0, 0);
-    align-items: end;
-    padding-bottom: 2rem; 
-    height: 140px;
+body {
+    width: 100%;
+    height: 100vh;
+}
+.menu {
+    width: 10vh;
+    height: 100vh;  
+    background-color: black;
     position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 450px;
-    border-radius: 2rem;
-    margin-bottom: 2rem;
+    padding-top: 2vh;
     z-index: 2;
 }
-.navigation {
-    top: 5px;
-    position: relative;
-    width: 400px;
-    height: 70px;
-    background: #858585;
+.player-icons{
     display: flex;
-    align-items:center;
-    border-radius: 10px;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-
-.navigation-container ul {
-    display: flex;
-    width: 350px;
+.player-icon{
+ width: 8vh;
+ height: 8vh;
+ opacity: 0.7;
+ border-radius: 50%;
+ margin-bottom: 2vh;
+ transition: all 0.3s ease;
+ cursor: pointer;
 }
-
-.navigation-container ul li {
-    position: relative;
-    list-style: none;
-    width: 70px;
-    height: 70px;
+.player-icon:hover{
+    transform: scale(1.2);
+    opacity: 1;
+}
+.info-panel{
+    opacity: 0.7;
+    background-color: black;
+    position: fixed;
+    top: -4000px;
+    right: 0;
+    height: 100vh;
+    width:40vh;
+    border: 1vh;
+    padding: 2vh;
+    transition: top 0.5s ease;
     z-index: 1;
 }
 
-.navigation-container ul li a {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
-}
-
-.navigation-container ul li a .icon {
-    position: relative;
-    display: block;
-    line-height: 70px;
-    font-size: 1.5em;
-    text-align: center;
-    color: #000;
-    transition: 0.5s;
-    align-items: center;
-    top: 10px;
-}
-.icon img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-}
-
-.navigation-container ul li.active a .icon {
-    transform: translateY(-35px);
-}
-
-.navigation-container ul li a .text {
-    position: absolute;
-    color: #000;
-    font-weight: 400;
-    font-size: 0.75em;
-    letter-spacing: 0.05em;
-    transform: translateY(20px);
-    transition: 0.5s;
-    opacity: 0;
-}
-
-.navigation-container ul li.active a .text {
-    opacity: 1;
-    transform: translateY(10px);
-}
-
-.indicator {
-    position: absolute;
-    top: -50%;
-    width: 70px;
-    height: 70px;
-    background: #000;
-    border-radius: 50%;
-    border: 6px solid #000;
-    transition: 0.5s;
-   
-}
-
-.indicator::before {
-    content: "";
-    position: absolute;
-    background: transparent;
-    top: 50%;
-    left: -22px;
-    width: 20px;
-    height: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 1px -10px 0 0 #000;
-}
-
-.indicator::after {
-    content: "";
-    position: absolute;
-    background: transparent;
-    top: 50%;
-    right: -22px;
-    width: 20px;
-    height: 20px;
-    border-top-left-radius: 20px;
-    box-shadow: -1px -10px 0 0 #000;
-}
-
-.navigation-container ul li:nth-child(1).active~.indicator {
-    transform: translateX(calc(70px*0));
-}
-
-.navigation-container ul li:nth-child(2).active~.indicator {
-    transform: translateX(calc(70px*1));
-}
-
-.navigation-container ul li:nth-child(3).active~.indicator {
-    transform: translateX(calc(70px*2));
-}
-
-.navigation-container ul li:nth-child(4).active~.indicator {
-    transform: translateX(calc(70px*3));
-}
-
-.navigation-container ul li:nth-child(5).active~.indicator {
-    transform: translateX(calc(70px*4));
-}
-
-/* MENU CSS ABOVE, OTHER WILL BE BELOW */
-
-.container {
-    position:fixed;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%; /* Adjust as needed */
-    margin: 0 0;
-    height: 100vh;
-}
-
-.text-content {
-    display: flex;
-    position: relative;
-    flex: 1;
-    height: 100vh;
-    width: 30vw;
-}
-
-.text-content img {
-    display: flex;
-    position: relative;
-    height: 100vh;
-    width: 30vw;
-}
-
-.text-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff; /* Set text color */
-    max-width: 30vw; /* Set a maximum width for the text */
-    padding: 20px; /* Add padding for margins */
-    text-align: center; /* Center-align the text */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-.content-area {
-    flex: 1;
-    padding: 20px; /* Add padding as needed */
-    width: 70vw;
-}
-
-.player-image-container {
-    max-width: 80%; /* Set the maximum width for the player image container */
-    margin: 0 auto; /* Center the container */
-}
-
-.player-image-container img {
-    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
-    height: auto; /* Maintain the aspect ratio of the image */
-    display: block; /* Remove any default image spacing */
-}

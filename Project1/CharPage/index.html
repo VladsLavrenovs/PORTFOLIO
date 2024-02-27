@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CharPage/styles.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="fullpage">
+        <div class="menu">
+            <div class="player-icons">
+                <img src="../CommonElements/player1.png" class="player-icon" onclick="toggleInfoPanel('infoPanel1')">
+                <img src="../CommonElements/player2.jpg" class="player-icon" onclick="toggleInfoPanel('infoPanel2')">
+                <img src="../CommonElements/player1.png" class="player-icon" onclick="toggleInfoPanel('infoPanel3')">
+                <img src="../CommonElements/player2.jpg" class="player-icon" onclick="toggleInfoPanel('infoPanel4')">
+            </div>
+        </div>
+        <div id="infoPanel1" class="info-panel">
+            <p>1</p>
+        </div>
+        <div id="infoPanel2" class="info-panel">
+            <p>2</p>
+        </div>
+        <div id="infoPanel3" class="info-panel">
+            <p>3</p>
+        </div>
+        <div id="infoPanel4" class="info-panel">
+            <p>4</p>
+        </div>
+    </div>
+
+    <script src="../CharPage/script.js"></script>
 </body>
 </html>
