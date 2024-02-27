@@ -7,39 +7,31 @@ function activeLink() {
     this.classList.add("active")
 }
 
-list.forEach((item) => item.addEventListener("click", activeLink))
 
+document.addEventListener("DOMContentLoaded", function () {
+    const playerMenuItems = document.querySelectorAll('.list');
 
-document.addEventListener('DOMContentLoaded', function () {
-    const menu = document.querySelector('.navigation');
-    const textContainer = document.querySelector('.text-container');
-    const contentArea = document.querySelector('.content-area');
+    playerMenuItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const playerTextContainer = document.getElementById('playerTextContainer');
+            const playerImageContainer = document.getElementById('playerImageContainer');
+            const playerName = item.querySelector('.text').textContent;
+            const playerFileName = playerName.toLowerCase().replace(/\s/g, ''); // Convert name to lowercase and remove spaces
 
-    menu.addEventListener('click', function (event) {
-        if (event.target.tagName === 'IMG') {
-            const characterFile = event.target.closest('.list').querySelector('.text').textContent.toLowerCase() + '.txt';
-            const characterImage = event.target.getAttribute('src');
-
-            // Fetch the text content from the file
-            fetch('../Players/' + characterFile)
+            // Fetch and update text content
+            fetch(`../Players/${playerFileName}.txt`)
                 .then(response => response.text())
-                .then(data => {
-                    // Update the text content in the text container
-                    textContainer.innerHTML = data;
-
-                    // Change the background image of the content area
-                    contentArea.style.backgroundImage = `url('../Players/${characterImage}')`;
-
-
-
-                    // Trigger the appearAnimation by adding a class
-                    textContainer.classList.add('appear-animation');
-                    // Remove the class after the animation duration to allow re-triggering
-                    setTimeout(() => {
-                        textContainer.classList.remove('appear-animation');
-                    }, 2000); // Set this timeout to match the duration of your appearAnimation
+                .then(textContent => {
+                    playerTextContainer.textContent = textContent;
                 })
                 .catch(error => console.error('Error fetching text content:', error));
-        }
+
+            // Update player image
+            const playerImageSrc = item.querySelector('.icon img').src;
+            const playerImage = document.createElement('img');
+            playerImage.src = playerImageSrc;
+            playerImageContainer.innerHTML = ''; // Clear previous content
+            playerImageContainer.appendChild(playerImage);
+        });
     });
 });
