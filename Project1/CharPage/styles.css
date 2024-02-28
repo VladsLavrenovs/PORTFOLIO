@@ -52,7 +52,7 @@ body {
     right: 40vh;
 }
 
-#characterImage {
+.characterImage {
     height: 100%;
     width: 100%;
 }
